@@ -4,7 +4,7 @@ export function entries() {
 		{ subreddit: 'berlin' },
 		{ subreddit: 'Notion' },
 		{ subreddit: 'Berghain_Community' },
-		{ subreddit: 'climatechange' },
+		{ subreddit: 'climatechange' }
 	];
 }
 
