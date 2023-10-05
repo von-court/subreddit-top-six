@@ -1,5 +1,5 @@
 {
-	"name": "kit-template-default",
+	"name": "subreddit-top-six",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
