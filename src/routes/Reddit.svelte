@@ -22,7 +22,7 @@
          {#if post.thumbnail && post.thumbnail !== "self" && post.thumbnail !== "default"}
             <img src={post.thumbnail} alt="Post thumbnail" class="post-thumbnail" />
         {/if}
-        <div class="post-title">{post.title}</div>
+        <div class="post-title"><a href="{post.url}" target="_blank">{post.title}</a></div>
         <div>{truncate(post.selftext, 100)}</div>
         <div class="post-stats">🔼 {post.ups} | 💬 {post.num_comments}</div>
     </div>
