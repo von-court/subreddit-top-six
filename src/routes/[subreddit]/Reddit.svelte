@@ -24,7 +24,7 @@
         <div class="post">
             <div class="post-content">
                 <h2 class="post-title"><a href="https://reddit.com{post.permalink}" target="_blank">{post.title}</a></h2>
-                <div>{truncate(post.selftext, 100)}</div>
+                <div class="post-text">{truncate(post.selftext, 100)}</div>
                 <div class="post-stats">🔼 {post.ups} | 💬 {post.num_comments}</div>
             </div>
             {#if post.thumbnail && post.thumbnail !== "self" && post.thumbnail !== "default"}
@@ -54,8 +54,14 @@
     }
     .post-content {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .post-text {
+        flex-grow: 1;
     }
     .post-thumbnail {
         margin-left: 10px;
+        max-height: 5rem;
     }
 </style>

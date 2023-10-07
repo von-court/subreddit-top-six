@@ -32,6 +32,14 @@ h2 {
 	}
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-theme-1: #d3d3d3;
+		--color-theme-2: #4075a6;
+		--color-text: rgba(255, 255, 255, 0.7);
+	}
+}
+
 .visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
