@@ -1,13 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
-    let posts = [];
-    export let subreddit = 'all';
-
-    onMount(async () => {
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?limit=10&t=day`);
-        const data = await response.json();
-        posts = data.data.children.filter(post => !post.data.stickied).map(post => post.data).slice(0, 6);
-    });
+    export let data;
 
     function truncate(text, length) {
         return text.length > length ? text.substring(0, length) + "..." : text;
@@ -15,12 +7,12 @@
 </script>
 
 <svelte:head>
-	<title>reddit: {subreddit}</title>
+	<title>reddit: {data.subreddit}</title>
 </svelte:head>
 
 <div class="container">
-    {#each posts as post}  
-        {@debug post}
+    {#each data.posts as post}  
+        <!-- {@debug post} -->
         <div class="post">
             <div class="post-content">
                 <h2 class="post-title"><a href="https://reddit.com{post.permalink}" target="_blank">{post.title}</a></h2>

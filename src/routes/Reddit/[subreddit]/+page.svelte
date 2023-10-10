@@ -4,5 +4,5 @@
 </script>
 
 <section>
-	<Reddit subreddit={data.subreddit}/>
+	<Reddit data={data}/>
 </section>
