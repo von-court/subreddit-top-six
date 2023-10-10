@@ -30,7 +30,9 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/sveltejs-kit-template-default-5ywtys'
+          BASE_PATH: '/top-n-posts'
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: |
           npm run build
           touch build/.nojekyll
