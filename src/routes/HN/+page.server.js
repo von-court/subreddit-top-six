@@ -2,7 +2,9 @@ export const prerender = true;
 
 export async function load({ fetch }) {
 	let posts = [];
-    const response = await fetch(`https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=6&numericFilters=points>100`);
+    const oneDayInSeconds = 24 * 60 * 60;
+    const timestampOneDayAgo = Math.floor((Date.now() - oneDayInSeconds * 1000) / 1000);
+    const response = await fetch(`http://hn.algolia.com/api/v1/search?hitsPerPage=6&numericFilters=created_at_i>${timestampOneDayAgo},points>100`);
     const data = await response.json();
     posts = data.hits;
 	return {
