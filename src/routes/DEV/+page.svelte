@@ -1,11 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
-    let posts = [];
-
-    onMount(async () => {
-        const response = await fetch(`https://dev.to/api/articles?top=1&per_page=6`);
-        posts = await response.json();
-    });
+    export let data;
 
     function truncate(text, length) {
         return text.length > length ? text.substring(0, length) + "..." : text;
@@ -17,7 +11,7 @@
 </svelte:head>
 
 <div class="container">
-    {#each posts as post}  
+    {#each data.posts as post}  
         <!-- {@debug post} -->
         <div class="post">
             <div class="post-content">

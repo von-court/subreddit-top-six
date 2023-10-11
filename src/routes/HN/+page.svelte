@@ -1,12 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
-    let posts = [];
-
-    onMount(async () => {
-        const response = await fetch(`http://hn.algolia.com/api/v1/search_by_date?hitsPerPage=6&numericFilters=points>100`);
-        const data = await response.json();
-        posts = data.hits;
-    });
+    export let data;
 
     function truncate(text, length) {
         return text ? text.length > length ? text.substring(0, length) + "..." : text : "";
@@ -18,7 +11,7 @@
 </svelte:head>
 
 <div class="container">
-    {#each posts as post}  
+    {#each data.posts as post}  
         <!-- {@debug post} -->
         <div class="post">
             <div class="post-content">
@@ -55,9 +48,5 @@
     }
     .post-text {
         flex-grow: 1;
-    }
-    .post-thumbnail {
-        margin-left: 10px;
-        max-height: 5rem;
     }
 </style>
