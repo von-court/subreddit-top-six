@@ -7,12 +7,7 @@ let expirationTime: number;
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	return [
-		{ subreddit: 'berlin' },
-		{ subreddit: 'Notion' },
-		{ subreddit: 'Berghain_Community' },
-		{ subreddit: 'climatechange' },
-		{ subreddit: 'Hyperhidrosis' },
-		{ subreddit: 'memes' }
+		{ subreddit: 'berlin' }
 	];
 }
 
